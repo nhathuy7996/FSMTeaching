@@ -1,6 +1,13 @@
 using UnityEngine;
 public class IdleState : IState
 {
+
+   
+    public IdleState(BotFSM botFSM, StateMachine stateMachine = null)
+    {
+         
+    }
+
     public void OnEnter()
     {
         Debug.Log("Entering Idle State");

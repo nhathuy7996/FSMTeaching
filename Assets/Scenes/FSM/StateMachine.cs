@@ -31,7 +31,7 @@ public class StateMachine
     {
         if(currentState != null && transitions.ContainsKey(currentState))
         {
-            Debug.Log("HHH");
+           
              foreach (var transition in this.transitions[currentState])
             {
                 if (transition.Condition())
