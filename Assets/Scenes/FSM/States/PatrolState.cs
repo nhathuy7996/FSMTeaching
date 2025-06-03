@@ -20,12 +20,12 @@ public class PatrolState : IState
     public void OnUpdate()
     {
 
-        if(this.botFMS.AtkTarget != null && this.botFMS.AtkTarget.activeSelf)
-        {
-            // If an attack target is detected, switch to chase state
-            this.stateMachine?.ChangeState(new ChaseState(this.botFMS, this.stateMachine));
-            return;
-        }
+        // if(this.botFMS.AtkTarget != null && this.botFMS.AtkTarget.activeSelf)
+        // {
+        //     // If an attack target is detected, switch to chase state
+        //     this.stateMachine?.ChangeState(new ChaseState(this.botFMS, this.stateMachine));
+        //     return;
+        // }
 
 
         if (targetPosition == Vector3.zero || Vector3.Distance(this.botFMS.transform.position, targetPosition) < 0.5f)

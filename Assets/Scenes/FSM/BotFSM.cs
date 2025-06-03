@@ -11,7 +11,21 @@ public class BotFSM : MonoBehaviour
     void Start()
     {
         this.stateMachine = new StateMachine();
-        this.stateMachine.ChangeState(new PatrolState(this, this.stateMachine));
+
+        var patrolState = new PatrolState(this, this.stateMachine);
+        var chaseState = new ChaseState(this, this.stateMachine);
+
+        this.stateMachine.AddTransition(
+            patrolState,
+            new Transition(IsAtkTargetActive, chaseState)
+        );
+
+        this.stateMachine.ChangeState(patrolState);
+    }
+
+    bool IsAtkTargetActive()
+    {
+        return atkTarget != null && atkTarget.activeSelf;
     }
 
     // Update is called once per frame

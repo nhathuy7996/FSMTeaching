@@ -5,6 +5,16 @@ using UnityEngine;
 public class StateMachine
 {
     IState currentState;
+    Dictionary<IState, List<Transition>> transitions = new Dictionary<IState, List<Transition>>();
+
+    public void AddTransition(IState fromState, Transition transition)
+    {
+        if (!transitions.ContainsKey(fromState))
+        {
+            transitions[fromState] = new List<Transition>();
+        }
+        transitions[fromState].Add(transition);
+    }
 
     public void ChangeState(IState nextState)
     {
@@ -19,6 +29,20 @@ public class StateMachine
     
     public void Update()
     {
+        if(currentState != null && transitions.ContainsKey(currentState))
+        {
+            Debug.Log("HHH");
+             foreach (var transition in this.transitions[currentState])
+            {
+                if (transition.Condition())
+                {
+                    ChangeState(transition.TargetState);
+                    return; // Exit after changing state
+                }
+            }
+        }
+       
+
         currentState?.OnUpdate();
     }
 }

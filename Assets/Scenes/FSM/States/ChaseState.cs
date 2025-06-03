@@ -22,12 +22,12 @@ public class ChaseState : IState
     public void OnUpdate()
     {
         
-        if (this.botFSM?.AtkTarget != null && !this.botFSM.AtkTarget.activeSelf)
-        {
-            // If no attack target is detected, switch to patrol state
-            this.stateMachine?.ChangeState(new IdleState());
-            return;
-        }
+        // if (this.botFSM?.AtkTarget != null && !this.botFSM.AtkTarget.activeSelf)
+        // {
+        //     // If no attack target is detected, switch to patrol state
+        //     this.stateMachine?.ChangeState(new IdleState());
+        //     return;
+        // }
           this.botFSM.transform.position = Vector3.MoveTowards(
             this.botFSM.transform.position,
             this.botFSM.AtkTarget.transform.position,

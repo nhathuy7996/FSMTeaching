@@ -268,6 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26c8291134dff41acb52bccdefd45832, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  atkTarget: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,7 +579,7 @@ GameObject:
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!135 &1800644980
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -659,7 +660,7 @@ Transform:
   m_GameObject: {fileID: 1800644979}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.8, z: -2.7}
+  m_LocalPosition: {x: -17, y: 0.8, z: -15.6}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
